@@ -1,0 +1,96 @@
+#app {
+    display: grid;
+    grid-template-columns: 51.25% 48.75%;
+
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    overflow: auto;
+    padding: 4rem;
+
+    & .main-container {
+        max-width: 33rem;
+        margin-left: auto;
+    }
+
+    & .back {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    & h1 {
+        font: 600 1.5rem/1.25 var(--font-family);
+        margin-bottom: .5rem;
+    }
+}
+
+aside {
+    background-color: var(--surface-secondary);
+    padding: 4rem;
+
+    & .aside-container {
+        max-width: 31rem;
+
+        & > img {
+            margin-top: 2rem;
+        }
+    }
+
+    & header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        & img {
+            margin-bottom: 1rem;
+        }
+    }
+
+    & h2 {
+        font: 600 2.5rem/1.25 var(--font-family);
+        margin-bottom: .5rem;
+
+        & span {
+            color: var(--text-highlight);
+        }
+    }
+}
+
+/* Mobile: colocar o aside (e sua div interna) no topo */
+@media (max-width: 768px) {
+    #app {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+        overflow: visible;
+    }
+
+    main {
+        padding: 1.5rem;
+        overflow: visible;
+
+        & .main-container {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    aside {
+        padding: 1.5rem 1.5rem 0;
+
+        & header h2,
+        & header p {
+            display: none;
+        }
+
+        & .aside-container > img {
+            margin-top: 12px;
+            margin-bottom: 24px;
+        }
+    }
+}
